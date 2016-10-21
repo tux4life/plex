@@ -16,7 +16,7 @@ def install_pms
   installer_file = "#{Chef::Config[:file_cache_path]}/#{release['filename']}"
 
   remote_file installer_file do
-    source reelase['url']
+    source release['url']
     action :create
   end
 
