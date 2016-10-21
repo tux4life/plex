@@ -18,9 +18,30 @@ platforms:
       run_command: /sbin/init
 
 suites:
-  - name: default
+  - name: install
     run_list:
-      - recipe[plex::default]
+      - recipe[plex::install_pms]
+    attributes:
+      plex:
+        service_provider: Chef::Provider::Service::Systemd
+  - name: install_and_start
+    run_list:
+      - recipe[plex::install_and_start_pms]
+    attributes:
+      plex:
+        service_provider: Chef::Provider::Service::Systemd
+  - name: uninstall
+    run_list:
+      - recipe[plex::install_and_start_pms]
+      - recipe[plex::uninstall_pms]
+    attributes:
+      plex:
+        service_provider: Chef::Provider::Service::Systemd
+  - name: reinstall
+    run_list:
+      - recipe[plex::install_pms]
+      - recipe[plex::uninstall_pms]
+      - recipe[plex::install_and_start_pms]
     attributes:
       plex:
         service_provider: Chef::Provider::Service::Systemd
