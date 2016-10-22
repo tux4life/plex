@@ -33,7 +33,7 @@ suites:
   - name: uninstall
     run_list:
       - recipe[plex::install_and_start_pms]
-        - recipe[plex::uninstall_pms]
+      - recipe[plex::uninstall_pms]
     attributes:
       plex:
         service_provider: Chef::Provider::Service::Systemd
