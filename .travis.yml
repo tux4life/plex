@@ -6,4 +6,17 @@ language: ruby
 rvm:
 - 2.3.1
 script:
-- KITCHEN_YAML=.kitchen.docker.yml bundle exec kitchen test
+- KITCHEN_YAML=.kitchen.docker.yml bundle exec kitchen test $SUITE
+env:
+  - SUITE=install-centos-7.2
+  - SUITE=install-fedora-24
+  - SUITE=install-ubuntu-16.04
+  - SUITE=install-and-start-centos-7.2
+  - SUITE=install-and-start-fedora-24
+  - SUITE=install-and-start-ubuntu-16.04
+  - SUITE=uninstall-centos-7.2
+  - SUITE=uninstall-fedora-24
+  - SUITE=uninstall-ubuntu-16.04
+  - SUITE=reinstall-centos-7.2
+  - SUITE=reinstall-fedora-24
+  - SUITE=reinstall-ubuntu-16.04
