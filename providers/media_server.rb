@@ -54,7 +54,7 @@ action :uninstall do
       action :purge
     end
   when 'fedora', 'rhel'
-    package 'plexmediaserver' do
+    rpm_package 'plexmediaserver' do
       action :remove
     end
   else
