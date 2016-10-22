@@ -8,13 +8,13 @@ provisioner:
 
 platforms:
   - name: centos-7.2
-    driver_config:
+    driver:
       run_command: /usr/sbin/init
   - name: fedora-24
-    driver_config:
+    driver:
       run_command: /usr/sbin/init
   - name: ubuntu-16.04
-    driver_config:
+    driver:
       run_command: /sbin/init
 
 suites:
